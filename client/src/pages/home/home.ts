@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+declare let firebase:any;
 
 @Component({
   selector: 'page-home',
