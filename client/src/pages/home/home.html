@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Smart Land Registration and Contracting
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Welcome, Please login or singup to continue</h1>
+  
+
+<div class="signin__form">
+ <ion-list>
+
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input type="text" [(ngModel)]="email" value="bsaraswat45@gmail.com">
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="password" value="bhansa293"></ion-input>
+  </ion-item>
+
+  <ion-item>
+  	<button (click)="authLogin()" ion-button block padding>Log in</button>
+  </ion-item>
+
+</ion-list>
+</div>
+<div class="signin__error">{{errorMessage}}</div>
+
+<h2>Still not a member? <a href="/join">Join</a></h2>
+
+
+  <ion-grid>
+  	
+  </ion-grid>
+</ion-content>
