@@ -1,6 +1,6 @@
 {
-  "name": "SmartLand",
-  "app_id": "4dc4639d",
+  "name": "Client",
+  "app_id": "",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

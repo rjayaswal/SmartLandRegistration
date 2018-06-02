@@ -9,14 +9,9 @@ declare let firebase:any;
 })
 export class HomePage {
 
-	email:any
-	password:any
-	errorMessage:any
-
   constructor(public navCtrl: NavController) {
 
   }
-
 
 	setData(){
 		// Initialize Cloud Firestore through Firebase
@@ -49,5 +44,5 @@ export class HomePage {
 	  alert(errorCode);
 	});
   }
-
+  
 }
