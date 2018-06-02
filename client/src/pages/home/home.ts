@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-declare let firebase:any;
 
 @Component({
   selector: 'page-home',
@@ -8,23 +7,8 @@ declare let firebase:any;
 })
 export class HomePage {
 
-	email:any
-	password:any
-	errorMessage:any
-
   constructor(public navCtrl: NavController) {
 
   }
-  authLogin(){
-  	firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-  	.then(function(){
-  		alert('logged in')
-  	})
 
-  	.catch(function(error) {
-	  // Handle Errors here.
-	  var errorCode = error.code;
-	  alert(errorCode);
-	});
-  }
 }
