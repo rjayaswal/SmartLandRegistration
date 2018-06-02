@@ -56,9 +56,35 @@ var HomePage = /** @class */ (function () {
     function HomePage(navCtrl) {
         this.navCtrl = navCtrl;
     }
+    HomePage.prototype.setData = function () {
+        // Initialize Cloud Firestore through Firebase
+        var db = firebase.firestore();
+        db.collection("ANGELHACK-USER-Details").add({
+            fullname: "Bharat Saraswat",
+            aadharid: 900080007000,
+            coordinates: [23, 67]
+        })
+            .then(function (docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+            .catch(function (error) {
+            console.error("Error adding document: ", error);
+        });
+    };
+    HomePage.prototype.authLogin = function () {
+        firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+            .then(function () {
+            alert('logged in');
+        })
+            .catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            alert(errorCode);
+        });
+    };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/mahendra/Desktop/Hackathon/SmartLandRegistration/Client/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  This Is Home Page\n</ion-content>\n'/*ion-inline-end:"/Users/mahendra/Desktop/Hackathon/SmartLandRegistration/Client/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  This Is Home Page\n</ion-content>\n'/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
     ], HomePage);
@@ -73,7 +99,7 @@ var HomePage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminCocmponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -82,14 +108,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
-var AdminCocmponent = /** @class */ (function () {
-    function AdminCocmponent() {
+var AdminComponent = /** @class */ (function () {
+    function AdminComponent() {
     }
-    AdminCocmponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/mahendra/Desktop/Hackathon/SmartLandRegistration/Client/src/pages/Admin/admin.template.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Admin</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n    This is admin page\n  </ion-content>'/*ion-inline-end:"/Users/mahendra/Desktop/Hackathon/SmartLandRegistration/Client/src/pages/Admin/admin.template.html"*/
+    AdminComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/admin/admin.template.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Admin</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n    This is admin page\n  </ion-content>'/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/admin/admin.template.html"*/
         })
-    ], AdminCocmponent);
-    return AdminCocmponent;
+    ], AdminComponent);
+    return AdminComponent;
 }());
 
 //# sourceMappingURL=admin.component.js.map
@@ -113,7 +139,7 @@ var UserComponent = /** @class */ (function () {
     function UserComponent() {
     }
     UserComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/mahendra/Desktop/Hackathon/SmartLandRegistration/Client/src/pages/User/user.template.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>User</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n        Here  is user pages\n  </ion-content>\n  '/*ion-inline-end:"/Users/mahendra/Desktop/Hackathon/SmartLandRegistration/Client/src/pages/User/user.template.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/user/user.template.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>User</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n        Here  is user pages\n  </ion-content>\n  '/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/user/user.template.html"*/,
         })
     ], UserComponent);
     return UserComponent;
@@ -149,8 +175,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(193);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__ = __webpack_require__(189);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_splash_screen__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_Admin_admin_component__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_User_user_component__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_admin_admin_component__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_user_user_component__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -174,8 +200,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_Admin_admin_component__["a" /* AdminCocmponent */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_User_user_component__["a" /* UserComponent */]
+                __WEBPACK_IMPORTED_MODULE_7__pages_admin_admin_component__["a" /* AdminComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_user_user_component__["a" /* UserComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -187,8 +213,8 @@ var AppModule = /** @class */ (function () {
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_Admin_admin_component__["a" /* AdminCocmponent */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_User_user_component__["a" /* UserComponent */]
+                __WEBPACK_IMPORTED_MODULE_7__pages_admin_admin_component__["a" /* AdminComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_user_user_component__["a" /* UserComponent */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_status_bar__["a" /* StatusBar */],
@@ -214,8 +240,8 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(189);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(192);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_Admin_admin_component__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_User_user_component__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_admin_admin_component__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_user_user_component__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -242,8 +268,8 @@ var MyApp = /** @class */ (function () {
         // used for an example of ngFor and navigation
         this.pages = [
             { title: 'Home', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
-            { title: 'Admin', component: __WEBPACK_IMPORTED_MODULE_5__pages_Admin_admin_component__["a" /* AdminCocmponent */] },
-            { title: 'User', component: __WEBPACK_IMPORTED_MODULE_6__pages_User_user_component__["a" /* UserComponent */] }
+            { title: 'Admin', component: __WEBPACK_IMPORTED_MODULE_5__pages_admin_admin_component__["a" /* AdminComponent */] },
+            { title: 'User', component: __WEBPACK_IMPORTED_MODULE_6__pages_user_user_component__["a" /* UserComponent */] }
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -262,15 +288,14 @@ var MyApp = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/mahendra/Desktop/Hackathon/SmartLandRegistration/Client/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Project Title</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/mahendra/Desktop/Hackathon/SmartLandRegistration/Client/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Project Title</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=app.component.js.map

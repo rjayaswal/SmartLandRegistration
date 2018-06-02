@@ -8,13 +8,13 @@ import { HomePage } from '../pages/home/home';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {AdminCocmponent} from "../pages/Admin/admin.component"
-import {UserComponent} from "../pages/User/user.component"
+import { AdminComponent } from "../pages/admin/admin.component"
+import {UserComponent} from "../pages/user/user.component"
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    AdminCocmponent,
+    AdminComponent,
     UserComponent
   ],
   imports: [
@@ -25,7 +25,7 @@ import {UserComponent} from "../pages/User/user.component"
   entryComponents: [
     MyApp,
     HomePage,
-    AdminCocmponent,
+    AdminComponent,
     UserComponent
   ],
   providers: [
