@@ -23,8 +23,8 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      {title:'Admin',component:AdminComponent},
-      {title:'User',component:UserComponent}
+      // {title:'Admin',component:AdminComponent},
+      {title:'My Account',component:UserComponent}
     ];
     if(localStorage.getItem("DATA") == undefined)
       localStorage.setItem("DATA",JSONDATA)

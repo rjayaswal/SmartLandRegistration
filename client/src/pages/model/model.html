@@ -1,7 +1,7 @@
 <ion-header>
 
 <ion-navbar>
-    <ion-title>ModalPage</ion-title>
+    <ion-title>Please provide your email id to continue</ion-title>
     <ion-buttons end>
     <button ion-button (click)="closeModal()">Close</button>
     </ion-buttons>
@@ -13,14 +13,14 @@
 	<ion-list>
 
   <ion-item>
-    <ion-label fixed >Username</ion-label>
-    <ion-input type="text" [(ngModel)]="username" value=""></ion-input>
+    <ion-label floating >Username</ion-label>
+    <ion-input type="text" [(ngModel)]="username" value="" width-100></ion-input>
   </ion-item>
-
+<!-- 
   <ion-item>
     <ion-label fixed>Password</ion-label>
     <ion-input type="password"></ion-input>
-  </ion-item>
+  </ion-item> -->
 	
 </ion-list>
 <button ion-button (click)="closeModal()">Submit</button>

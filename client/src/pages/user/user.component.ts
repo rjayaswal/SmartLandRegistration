@@ -3,7 +3,10 @@ import {HttpClient} from "@angular/common/http";
 import {LoginStatusCheck} from "../../Service/loginfile"
 import { ModalController } from 'ionic-angular';
 import {ModalPage} from "../model/model";
-declare let storage= firebase.storage();
+declare let firebase:any;
+
+var storage= firebase.storage();
+
 @Component({
     templateUrl:"user.template.html",
 })
@@ -30,6 +33,8 @@ export class UserComponent implements OnInit,OnDestroy{
       			this.loggerName = this._logger.loggerName
       			this.setData();
       		});
+
+        let buyRequest:string;
 	}
 
 	setData(){
@@ -73,5 +78,8 @@ export class UserComponent implements OnInit,OnDestroy{
 	Logout(){
 		this._logger.loggerName = null;
 		window.location.reload();
+	}
+	buymsg(){
+		this.buyRequest = "A buy request has been send to the owner";
 	}
 }

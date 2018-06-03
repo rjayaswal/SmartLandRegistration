@@ -25724,3 +25724,9 @@ page-home .home-container p {
   padding: 10px;
   margin: 5px;
 }
+
+.buy-request {
+  padding-top: 10px;
+  color: #86bc25;
+  font-size: 24px;
+}

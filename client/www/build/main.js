@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 110:
+/***/ 111:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -13,11 +13,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 110;
+webpackEmptyAsyncContext.id = 111;
 
 /***/ }),
 
-/***/ 152:
+/***/ 153:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -30,17 +30,17 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 152;
+webpackEmptyAsyncContext.id = 153;
 
 /***/ }),
 
-/***/ 196:
+/***/ 197:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -88,7 +88,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/home/home.html"*/'<ion-header>\n<ion-navbar>\n<button ion-button menuToggle>\n<ion-icon name="menu"></ion-icon>\n</button>\n<ion-title>Home</ion-title>\n</ion-navbar>\n</ion-header>\n\n<!-- Page Content -->\n<section class="home">\n<div class="home-container">\n<div class="row" justify-content-center>\n<div class="col-lg-6">\n<h1 class="mt-5">Smart land registro</h1>\n<p>Smart solution for land registration, buy, sell or transfer ownership.</p>\n</div>\n</div>\n</div>\n</section>'/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/home/home.html"*/'<ion-header>\n<ion-navbar>\n<button ion-button menuToggle>\n<ion-icon name="menu"></ion-icon>\n</button>\n<ion-title>Manage properties smartly</ion-title>\n</ion-navbar>\n</ion-header>\n\n<!-- Page Content -->\n<section class="home">\n<div class="home-container">\n<div class="row" justify-content-center>\n<div class="col-lg-6">\n<h1 class="mt-5">Smart land registro</h1>\n<p>Smart solution for land registration, buy, sell or transfer ownership.</p>\n</div>\n</div>\n</div>\n</section>'/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], HomePage);
@@ -99,7 +99,7 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 197:
+/***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -126,16 +126,16 @@ var AdminComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 198:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Service_loginfile__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model_model__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Service_loginfile__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model_model__ = __webpack_require__(201);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -150,6 +150,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+var storage = firebase.storage();
 var UserComponent = /** @class */ (function () {
     function UserComponent(_http, _logger, modalCtrl) {
         var _this = this;
@@ -168,6 +169,7 @@ var UserComponent = /** @class */ (function () {
             _this.loggerName = _this._logger.loggerName;
             _this.setData();
         });
+        var buyRequest;
     }
     UserComponent.prototype.setData = function () {
         var response = JSON.parse(localStorage.getItem("DATA"));
@@ -210,8 +212,11 @@ var UserComponent = /** @class */ (function () {
         this._logger.loggerName = null;
         window.location.reload();
     };
+    UserComponent.prototype.buymsg = function () {
+        this.buyRequest = "A buy request has been send to the owner";
+    };
     UserComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/user/user.template.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>User</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n        <table border="1" class="table" width="100%">\n          <thead>\n              <tr>\n                <th>Select Property</th>\n                  <th>Aadhar ID</th> \n                  <th>Name of the owner</th>\n                  <th>Email ID</th>\n                  <th>gender</th>\n                  <th>Age</th>\n                  <th>Phone</th>\n                  <!-- <th>Registered Date</th> -->\n                  <th>Schedule of land</th>      \n                  <th>Rate/acre</th>      \n              </tr>\n          </thead> \n          <tbody>\n            <tr *ngFor="let item of AllUserInfo">\n              <td><ion-item>\n    <ion-checkbox [(ngModel)]="pepperoni" (click)="addToSellList(item)"></ion-checkbox>\n  </ion-item></td>\n              <td>{{item.adhar_id}}</td>\n              <td>{{item.name}}</td>\n              <td>{{item.email}}</td>\n              <td>{{item.gender}}</td>\n              <td>{{item.age}}</td>\n              <td>{{item.phone}}</td>\n              <td>{{item.address[0].city}} | {{item.address[0].landmark}} | {{item.address[0].pincode}}</td>\n              <td>~15 Lakhs*</td>\n            </tr> \n          </tbody> \n        </table> \n        <button ion-button (click)="openSell()">Make available for sell</button> \n        <button ion-button (click)="Logout()">Log out</button> \n\n\n        <h2>Your buying options</h2>\n\n        <table border="1" class="table" width="100%">\n          <thead>\n              <tr>\n                <!-- <th>Select Property</th> -->\n                  <th>Aadhar ID</th> \n                  <th>Name</th>\n                  <th>Email ID</th>\n                  <th>gender</th>\n                  <th>Age</th>\n                  <th>Phome</th>\n                  <!-- <th>Registered Date</th> -->\n                  <th>Address Info</th>      \n              </tr>\n          </thead> \n          <tbody>\n            <tr *ngFor="let item of BuyerItem" >\n              <td> {{item.adhar_id}}</td>\n              <td>{{item.name}}</td>\n              <td>{{item.email}}</td>\n              <td>{{item.gender}}</td>\n              <td>{{item.age}}</td>\n              <td>{{item.phone}}</td>\n              <td>{{item.address[0].city}} | {{item.address[0].landmark}} | {{item.address[0].pincode}}</td>\n            </tr> \n          </tbody> \n        </table> \n\n  </ion-content>\n  '/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/user/user.template.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/user/user.template.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>User</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n    <h2>Your Properties</h2>\n        <table border="1" class="table" width="100%">\n          <thead>\n              <tr>\n                <th>Select Property</th>\n                  <th>Aadhar ID</th> \n                  <th>Name of the owner</th>\n                  <th>Email ID</th>\n                  <th>gender</th>\n                  <th>Age</th>\n                  <th>Phone</th>\n                  <!-- <th>Registered Date</th> -->\n                  <th>Schedule of land</th>      \n                  <th>Rate/acre</th>      \n              </tr>\n          </thead> \n          <tbody>\n            <tr *ngFor="let item of AllUserInfo">\n              <td><ion-item>\n    <ion-checkbox [(ngModel)]="pepperoni" (click)="addToSellList(item)"></ion-checkbox>\n  </ion-item></td>\n              <td>{{item.adhar_id}}</td>\n              <td>{{item.name}}</td>\n              <td>{{item.email}}</td>\n              <td>{{item.gender}}</td>\n              <td>{{item.age}}</td>\n              <td>{{item.phone}}</td>\n              <td>{{item.address[0].city}} | {{item.address[0].landmark}} | {{item.address[0].pincode}}</td>\n              <td>~15 Lakhs*</td>\n            </tr> \n          </tbody> \n        </table> \n        <button ion-button (click)="openSell()">Make available for sell</button> \n        <button ion-button (click)="Logout()">Log out</button> \n\n\n        <h2>Your buying options</h2>\n\n        <table border="1" class="table" width="100%">\n          <thead>\n              <tr>\n                <!-- <th>Select Property</th> -->\n                  <th>Aadhar ID</th> \n                  <th>Name</th>\n                  <th>Email ID</th>\n                  <th>gender</th>\n                  <th>Age</th>\n                  <th>Phome</th>\n                  <!-- <th>Registered Date</th> -->\n                  <th>Address Info</th>\n                  <th>Action</th>\n\n              </tr>\n          </thead> \n          <tbody>\n            <tr *ngFor="let item of BuyerItem" >\n              <td> {{item.adhar_id}}</td>\n              <td>{{item.name}}</td>\n              <td>{{item.email}}</td>\n              <td>{{item.gender}}</td>\n              <td>{{item.age}}</td>\n              <td>{{item.phone}}</td>\n              <td>{{item.address[0].city}} | {{item.address[0].landmark}} | {{item.address[0].pincode}}</td>\n              <td><button (click)="buymsg();" ion-button>Buy</button></td>\n            </tr> \n          </tbody> \n        </table> \n\n        <div class="buy-request">{{buyRequest}}</div>\n\n  </ion-content>\n  '/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/user/user.template.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__Service_loginfile__["a" /* LoginStatusCheck */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__Service_loginfile__["a" /* LoginStatusCheck */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["d" /* ModalController */]) === "function" && _c || Object])
     ], UserComponent);
@@ -223,12 +228,39 @@ var UserComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 199:
+/***/ 200:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginStatusCheck; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var LoginStatusCheck = /** @class */ (function () {
+    function LoginStatusCheck() {
+        this.IsAnyLogger = true;
+    }
+    LoginStatusCheck = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])()
+    ], LoginStatusCheck);
+    return LoginStatusCheck;
+}());
+
+//# sourceMappingURL=loginfile.js.map
+
+/***/ }),
+
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(40);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -255,7 +287,7 @@ var ModalPage = /** @class */ (function () {
         });
     };
     ModalPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/model/model.html"*/'<ion-header>\n\n<ion-navbar>\n    <ion-title>ModalPage</ion-title>\n    <ion-buttons end>\n    <button ion-button (click)="closeModal()">Close</button>\n    </ion-buttons>\n</ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n	<ion-list>\n\n  <ion-item>\n    <ion-label fixed >Username</ion-label>\n    <ion-input type="text" [(ngModel)]="username" value=""></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label fixed>Password</ion-label>\n    <ion-input type="password"></ion-input>\n  </ion-item>\n	\n</ion-list>\n<button ion-button (click)="closeModal()">Submit</button>\n</ion-content>	'/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/model/model.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/model/model.html"*/'<ion-header>\n\n<ion-navbar>\n    <ion-title>Please provide your email id to continue</ion-title>\n    <ion-buttons end>\n    <button ion-button (click)="closeModal()">Close</button>\n    </ion-buttons>\n</ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n	<ion-list>\n\n  <ion-item>\n    <ion-label floating >Username</ion-label>\n    <ion-input type="text" [(ngModel)]="username" value="" width-100></ion-input>\n  </ion-item>\n<!-- \n  <ion-item>\n    <ion-label fixed>Password</ion-label>\n    <ion-input type="password"></ion-input>\n  </ion-item> -->\n	\n</ion-list>\n<button ion-button (click)="closeModal()">Submit</button>\n</ion-content>	'/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/pages/model/model.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["i" /* ViewController */], __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["g" /* NavParams */]])
     ], ModalPage);
@@ -266,13 +298,13 @@ var ModalPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 200:
+/***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(223);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -280,23 +312,23 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 221:
+/***/ 223:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Service_loginfile__ = __webpack_require__(272);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_admin_admin_component__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_user_user_component__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_model_model__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Service_loginfile__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_admin_admin_component__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_user_user_component__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_model_model__ = __webpack_require__(201);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -357,19 +389,18 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 263:
+/***/ 265:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_admin_admin_component__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_user_user_component__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_user_user_component__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_common_http__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -379,7 +410,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -398,8 +428,8 @@ var MyApp = /** @class */ (function () {
         // used for an example of ngFor and navigation
         this.pages = [
             { title: 'Home', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
-            { title: 'Admin', component: __WEBPACK_IMPORTED_MODULE_5__pages_admin_admin_component__["a" /* AdminComponent */] },
-            { title: 'User', component: __WEBPACK_IMPORTED_MODULE_6__pages_user_user_component__["a" /* UserComponent */] }
+            // {title:'Admin',component:AdminComponent},
+            { title: 'My Account', component: __WEBPACK_IMPORTED_MODULE_5__pages_user_user_component__["a" /* UserComponent */] }
         ];
         if (localStorage.getItem("DATA") == undefined)
             localStorage.setItem("DATA", JSONDATA);
@@ -423,9 +453,9 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]) === "function" && _a || Object)
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Project Title</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>My Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/bharat/work/AngelHack/SmartLandRegistration/client/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["a" /* HttpClient */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__angular_common_http__["a" /* HttpClient */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__angular_common_http__["a" /* HttpClient */]) === "function" && _e || Object])
     ], MyApp);
     return MyApp;
     var _a, _b, _c, _d, _e;
@@ -643,34 +673,7 @@ var JSONDATA = JSON.stringify([{
 ]);
 //# sourceMappingURL=app.component.js.map
 
-/***/ }),
-
-/***/ 272:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginStatusCheck; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var LoginStatusCheck = /** @class */ (function () {
-    function LoginStatusCheck() {
-        this.IsAnyLogger = true;
-    }
-    LoginStatusCheck = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])()
-    ], LoginStatusCheck);
-    return LoginStatusCheck;
-}());
-
-//# sourceMappingURL=loginfile.js.map
-
 /***/ })
 
-},[200]);
+},[202]);
 //# sourceMappingURL=main.js.map
