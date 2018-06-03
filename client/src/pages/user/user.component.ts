@@ -3,7 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {LoginStatusCheck} from "../../Service/loginfile"
 import { ModalController } from 'ionic-angular';
 import {ModalPage} from "../model/model";
-declare let storage= firebase.storage();
+//declare let storage= firebase.storage();
 @Component({
     templateUrl:"user.template.html",
 })
