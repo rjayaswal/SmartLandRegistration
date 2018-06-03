@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+  <script data-ionic="inject">
+    (function(w){var i=w.Ionic=w.Ionic||{};i.version='3.9.2';i.angular='5.2.10';i.staticDir='build/';})(window);
+  </script>
   <meta charset="UTF-8">
   <title>Ionic App</title>
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -15,6 +18,20 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyD11i9mJwEAkyV4mXjVXVUi-amIiWtBlyc",
+      authDomain: "angelhack-8311b.firebaseapp.com",
+      databaseURL: "https://angelhack-8311b.firebaseio.com",
+      projectId: "angelhack-8311b",
+      storageBucket: "angelhack-8311b.appspot.com",
+      messagingSenderId: "666160010480"
+    };
+    firebase.initializeApp(config);
+  </script>
+
   <!-- cordova.js required for cordova apps (remove if not needed) -->
   <script src="cordova.js"></script>
 
@@ -28,7 +45,7 @@
   </script>-->
 
   <link href="build/main.css" rel="stylesheet">
-
+<base href="/">
 </head>
 <body>
 

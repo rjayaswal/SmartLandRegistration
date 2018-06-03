@@ -9,29 +9,34 @@ declare let firebase:any;
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+email:any;
+password:any;
 
+  constructor(public navCtrl: NavController) {
+  	this.email = "bsaraswat45@gmail.com";
+	this.password = "bhansa293";
   }
 
 	setData(){
 		// Initialize Cloud Firestore through Firebase
 		var db = firebase.firestore();
 	  	
-  	db.collection("ANGELHACK-USER-Details").add({
-		    fullname: "Bharat Saraswat",
-		    aadharid: 900080007000,
-		    coordinates: [23, 67]
-		})
-		.then(function(docRef) {
-		    console.log("Document written with ID: ", docRef.id);
-		})
-		.catch(function(error) {
-		    console.error("Error adding document: ", error);
-		});
+  // 	db.collection("ANGELHACK-USER-Details").add({
+		//     fullname: "Bharat Saraswat",
+		//     aadharid: 900080007000,
+		//     coordinates: [23, 67]
+		// })
+		// .then(function(docRef) {
+		//     console.log("Document written with ID: ", docRef.id);
+		// })
+		// .catch(function(error) {
+		//     console.error("Error adding document: ", error);
+		// });
 	}
 
 
-
+	redirectToUser(){
+	}
   authLogin(){
   	firebase.auth().signInWithEmailAndPassword(this.email, this.password)
   	.then(function(){
