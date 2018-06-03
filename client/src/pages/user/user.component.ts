@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {LoginStatusCheck} from "../../Service/loginfile"
 import { ModalController } from 'ionic-angular';
 import {ModalPage} from "../model/model";
+
 declare let firebase:any;
 
 var storage= firebase.storage();
@@ -20,6 +21,7 @@ export class UserComponent implements OnInit,OnDestroy{
 	JsonResult:any;
 	loggerName:any;
 	BuyerItem=[];
+	buyRequest:string;
 	constructor(private _http: HttpClient,
 		private _logger:LoginStatusCheck,
 		public modalCtrl : ModalController){
@@ -33,8 +35,6 @@ export class UserComponent implements OnInit,OnDestroy{
       			this.loggerName = this._logger.loggerName
       			this.setData();
       		});
-
-        let buyRequest:string;
 	}
 
 	setData(){
