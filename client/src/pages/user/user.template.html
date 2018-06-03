@@ -1,0 +1,77 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>User</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <h2>Your Properties</h2>
+        <table border="1" class="table" width="100%">
+          <thead>
+              <tr>
+                <th>Select Property</th>
+                  <th>Aadhar ID</th> 
+                  <th>Name of the owner</th>
+                  <th>Email ID</th>
+                  <th>gender</th>
+                  <th>Age</th>
+                  <th>Phone</th>
+                  <!-- <th>Registered Date</th> -->
+                  <th>Schedule of land</th>      
+                  <th>Rate/acre</th>      
+              </tr>
+          </thead> 
+          <tbody>
+            <tr *ngFor="let item of AllUserInfo">
+              <td><ion-item>
+    <ion-checkbox [(ngModel)]="pepperoni" (click)="addToSellList(item)"></ion-checkbox>
+  </ion-item></td>
+              <td>{{item.adhar_id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.gender}}</td>
+              <td>{{item.age}}</td>
+              <td>{{item.phone}}</td>
+              <td>{{item.address[0].city}} | {{item.address[0].landmark}} | {{item.address[0].pincode}}</td>
+              <td>~15 Lakhs*</td>
+            </tr> 
+          </tbody> 
+        </table> 
+        <button ion-button (click)="openSell()">Make available for sell</button> 
+        <button ion-button (click)="Logout()">Log out</button> 
+
+
+        <h2>Your buying options</h2>
+
+        <table border="1" class="table" width="100%">
+          <thead>
+              <tr>
+                <!-- <th>Select Property</th> -->
+                  <th>Aadhar ID</th> 
+                  <th>Name</th>
+                  <th>Email ID</th>
+                  <th>gender</th>
+                  <th>Age</th>
+                  <th>Phome</th>
+                  <!-- <th>Registered Date</th> -->
+                  <th>Address Info</th>      
+              </tr>
+          </thead> 
+          <tbody>
+            <tr *ngFor="let item of BuyerItem" >
+              <td> {{item.adhar_id}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.gender}}</td>
+              <td>{{item.age}}</td>
+              <td>{{item.phone}}</td>
+              <td>{{item.address[0].city}} | {{item.address[0].landmark}} | {{item.address[0].pincode}}</td>
+            </tr> 
+          </tbody> 
+        </table> 
+
+  </ion-content>
+  
