@@ -25712,10 +25712,15 @@ page-home .home-container p {
   font-size: 2em;
 }
 
+.table th {
+  padding: 10px;
+}
+
 .table tr {
   padding: 5px;
 }
 
 .table tr td {
-  padding: 5px;
+  padding: 10px;
+  margin: 5px;
 }

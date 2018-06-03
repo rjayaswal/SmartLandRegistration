@@ -40,4 +40,6 @@ import {ModalPage} from "../pages/model/model";
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+  
+}
